@@ -1,0 +1,68 @@
+.logo, .modal-title{
+    margin: auto 5% auto 2%;
+    font-size: 0.8rem;
+    width: 220px;
+    display: flex;
+    justify-self: start;
+    cursor: pointer;
+    align-items: center;
+    font-family: system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        "Noto Sans",
+        "Liberation Sans",
+        Arial,
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji";
+    font-weight: bold;
+}
+.logo-icon{
+    font-size: 2.8rem;
+}
+.logo-icon-offcanvas {
+    font-size: 1.5rem;
+    margin-right: 7px;
+}
+.title-offcanvas{
+    margin: auto 5% auto 2%;
+    font-size: 0.65rem;
+    width: 220px;
+    display: flex;
+    justify-self: start;
+    cursor: pointer;
+    align-items: center;
+    font-family: system-ui,
+            -apple-system,
+            "Segoe UI",
+            Roboto,
+            "Helvetica Neue",
+            "Noto Sans",
+            "Liberation Sans",
+            Arial,
+            sans-serif,
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Noto Color Emoji";
+    font-weight: bold;
+}
+
+.btn-search{
+    font-size: 1.4rem;
+    margin-right: 10px;
+}
+
+.logo-icon-Modal{
+    font-size: 3rem;
+    margin-right: 10px;
+}
+.stiufy-content-end{
+    justify-content: left;
+}
+
+

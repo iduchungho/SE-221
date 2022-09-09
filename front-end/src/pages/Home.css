@@ -1,0 +1,43 @@
+.home-page{
+    margin-top: 80px;
+    background: url(https://papers.co/wallpaper/papers.co-ne57-green-city-cloud-metropolitan-urban-building-35-3840x2160-4k-wallpaper.jpg) center center/cover no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+
+.title{
+    margin-top: 8px;
+    color: #fff;
+    font-size: 32px;
+    font-family: system-ui,
+            -apple-system,
+            "Segoe UI",
+            Roboto,
+            "Helvetica Neue",
+            "Noto Sans",
+            "Liberation Sans",
+            Arial,
+            sans-serif,
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Noto Color Emoji";
+    font-weight: bold;
+    position: relative;
+}
+
+.title>h1{
+    font-size: 3rem;
+}
+
+.btn-title{
+    font-size: 1.6rem;
+    margin-left: auto;
+    margin-right: auto;
+}
