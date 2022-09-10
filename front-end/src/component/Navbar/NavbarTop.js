@@ -27,7 +27,7 @@ function NavbarTop() {
 
     return (
         <>
-            <Navbar key={true} bg="light"  expand={'md'} fixed='top'>
+            <Navbar key={true} bg="light" expand={'xl'} fixed='top'>
                 <Container fluid className='nav-container'>
                     
                     {/* Toggle off canvas content */}

@@ -1,0 +1,65 @@
+.login-wallpaper{
+    margin-top: 4.89rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 600px;
+    padding: 4rem;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+    border-radius: 0.5rem;
+}
+
+.login-logo{
+    display: flex;
+    font-family: system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        "Noto Sans",
+        "Liberation Sans",
+        Arial,
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji";
+    font-weight: bold;
+}
+
+.login-logo-icon{
+    font-size: 3rem;
+    display: flex;
+    margin-right: 10px;
+}
+
+.login-divider{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.login-body{
+    display: grid;  
+}
+
+.login-body-item{
+    margin-top: 10px;
+}
+
+.login-body-item-btn{
+    width: 100%;
+}
+
+.login-body-header{
+    padding: 8px 6px 0px 6px;
+}

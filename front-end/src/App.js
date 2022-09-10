@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarTop from './component/Navbar/NavbarTop'
 import NavbarBottom from './component/Navbar/NavbarBottom';
 import Home from './pages/Home';
+import Login from './pages/Login/Login';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/tutorial' element={<Home />}/>
+            <Route path='/login' element={<Login />}/>
           </Routes>
         <NavbarBottom/>
       </Router>
