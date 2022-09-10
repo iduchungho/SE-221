@@ -30,6 +30,8 @@
             "Noto Color Emoji";
     font-weight: bold;
     position: relative;
+
+    display: grid;
 }
 
 .title>h1{
