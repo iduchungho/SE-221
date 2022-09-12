@@ -5,11 +5,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import React, { useState } from 'react';
 // import Modal from 'react-bootstrap/Modal';
-// import React, { useState } from 'react';
 
 
 import './NavbarTop.css'
+import { Language } from '../config/configLanguage';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -24,10 +25,18 @@ function NavbarTop() {
     // const handleShow = () => setShow(true);
     // const handleClose = () => setShow(false);
 
+    const [language, setLanguage] = useState(true);
+    const VIE = 'Tiếng Việt (vi)';
+    const US = 'English (en-US)';
+
+    const handleClick = () => {
+        setLanguage(!language);
+    }
+
 
     return (
         <>
-            <Navbar key={true} bg="light" expand={'xl'} fixed='top'>
+            <Navbar key={true} bg="light" expand={'md'} fixed='top'>
                 <Container fluid className='nav-container'>
                     
                     {/* Toggle off canvas content */}
@@ -61,35 +70,35 @@ function NavbarTop() {
                             <Nav className="jstiufy-content-end flex-grow-1 pe-3">
 
                                 {/* item off canvas */}
-                                <Nav.Link href="/" className='nav-item'>Home</Nav.Link>
-                                <Nav.Link href="tutorial" className = 'nav-item'>Tutorial</Nav.Link>
-                                <Nav.Link href="my-calendar" className = 'nav-item'>My Calendar</Nav.Link>
+                                <Nav.Link href="/" className='nav-item'>{language ? Language.VIE.Home : Language.ENG.Home}</Nav.Link>
+                                <Nav.Link href="tutorial" className='nav-item'>{language ? Language.VIE.Tutorial : Language.ENG.Tutorial}</Nav.Link>
+                                <Nav.Link href="my-calendar" className='nav-item'>{language ? Language.VIE.Calendar : Language.ENG.Calendar}</Nav.Link>
 
                                 {/* NavDropdown table content */}
                                 <NavDropdown
-                                    title="Tiếng Việt (vi)"
+                                    title= {language ? VIE : US}
                                     id={`offcanvasNavbarDropdown-expand-${'md'}`}
                                 >
-                                    <NavDropdown.Item href="VIE">
-                                        {"Tiếng Việt (vi)"}
+                                    <NavDropdown.Item onClick={language ? language : handleClick}>
+                                        {VIE}
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item href="ENG">
-                                        {"English (en-us)"}
+                                    <NavDropdown.Item onClick={language ? handleClick : language}>
+                                        {US}
                                     </NavDropdown.Item>
                                 </NavDropdown>
 
                                 {/* Thanh tim kiem */}
-                                <Form className="d-flex">
+                                {/* <Form className="d-flex">
                                     <Form.Control
                                         type="search"
-                                        placeholder="Search"
+                                        placeholder={language ? Language.VIE.Search : Language.ENG.Search}
                                         className="me-2"
                                         aria-label="Search"
                                     />
                                     <Button variant="light" className='btn-icon'>
                                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                                     </Button>
-                                </Form>
+                                </Form> */}
                             </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
@@ -97,7 +106,7 @@ function NavbarTop() {
                     {/* Nut dang nhap */}
                     <Navbar.Brand className='btn-login'>
                         <Button variant="primary" >
-                            <Nav.Link href="Login">Login</Nav.Link>
+                            <Nav.Link href="Login">{language ? Language.VIE.Login : Language.ENG.Login}</Nav.Link>
                         </Button>
                     </Navbar.Brand>
                 </Container>

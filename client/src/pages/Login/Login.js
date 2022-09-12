@@ -14,7 +14,7 @@ function Login() {
                 <div className='login-logo'>
                     <FontAwesomeIcon icon={faTruckFast} className='login-logo-icon'></FontAwesomeIcon>
                     <div>
-                        URBAN WASTE<br/>
+                        URBAN WASTE<br />
                         COLLECTION
                         AID - UWC 2.0
                     </div>
@@ -24,14 +24,14 @@ function Login() {
                     <div className='login-body-header'>
                         <h5>Login for</h5>
                     </div>
-                    <div className='login-body-item'>
-                        <Button variant='light' className='login-body-item-btn'>Administrator</Button>
-                    </div>
                     <div className='login-body-item' >
                         <Button variant='light' className='login-body-item-btn'>Back officers </Button>
                     </div>
                     <div className='login-body-item'>
                         <Button variant='light' className='login-body-item-btn'>Collectors and janitors</Button>
+                    </div>
+                    <div className='login-body-item'>
+                        <Button variant='light' className='login-body-item-btn'>Administrator</Button>
                     </div>
                 </div>
                 <div className='login-divider'></div>

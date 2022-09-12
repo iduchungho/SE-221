@@ -1,7 +1,7 @@
 import './Home.css'
 
 import Button from 'react-bootstrap/Button';
-import Carousel from 'react-bootstrap/Carousel';
+// import Carousel from 'react-bootstrap/Carousel';
 
 function Home(){
     return(

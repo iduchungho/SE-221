@@ -14,13 +14,13 @@ function App() {
   return (
     <>
       <Router>
-        <NavbarTop/>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/tutorial' element={<Home />}/>
-            <Route path='/login' element={<Login />}/>
-          </Routes>
-        <NavbarBottom/>
+        <NavbarTop />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/tutorial' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>
+        <NavbarBottom />
       </Router>
     </>
   );
