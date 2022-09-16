@@ -31,7 +31,7 @@ function LoginSite() {
                         </Form.Group>
                         <Form.Group controlId='formBasicPassword' className='form-group'>
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type='password' />
+                            <Form.Control type='password'/>
                         </Form.Group>
                         <Form.Group controlId='formBasicCheckbox' className='form-group'>
                             <Form.Check type='checkbox' label='Check me out' />
