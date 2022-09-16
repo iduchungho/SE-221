@@ -9,6 +9,7 @@ import NavbarTop from './component/Navbar/NavbarTop'
 import NavbarBottom from './component/Navbar/NavbarBottom';
 import Home from './pages/Home';
 import Login from './pages/Login/Login';
+import LoginSite from './pages/Login/LoginSite';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/tutorial' element={<Home />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/login-site' element={<LoginSite />} />
         </Routes>
         <NavbarBottom />
       </Router>

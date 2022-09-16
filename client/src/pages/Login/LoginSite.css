@@ -1,0 +1,22 @@
+.background-stie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login-container{
+    display: grid;
+}
+
+
+.login{
+    display: flex;
+
+}
+
+.login-backgroud{
+    display: flex;
+    background: url(https://lp-cms-production.s3.amazonaws.com/public/features/2017/08/GettyImages-560622533_super_1-054ffd92f044.jpg) center center/cover no-repeat;
+    width: 70%;
+}

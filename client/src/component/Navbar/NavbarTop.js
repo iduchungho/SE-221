@@ -1,11 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import React, { useState } from 'react';
+//import Form from 'react-bootstrap/Form';
 // import Modal from 'react-bootstrap/Modal';
 
 
@@ -15,7 +15,7 @@ import { Language } from '../config/configLanguage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faTruckFast,
-    faMagnifyingGlass,
+    // faMagnifyingGlass,
     // faComment,
     // faBell
 } from '@fortawesome/free-solid-svg-icons';
@@ -25,7 +25,7 @@ function NavbarTop() {
     // const handleShow = () => setShow(true);
     // const handleClose = () => setShow(false);
 
-    const [language, setLanguage] = useState(true);
+    const [language, setLanguage] = useState(false);
     const VIE = 'Tiếng Việt (vi)';
     const US = 'English (en-US)';
 
@@ -33,10 +33,27 @@ function NavbarTop() {
         setLanguage(!language);
     }
 
+    const [navbarColor, setNavbarColor] = useState(false);
+    const backgroundColor = () => {
+        if(window.scrollY >= 10){
+            setNavbarColor(true);
+        } else {
+            setNavbarColor(false);
+        }
+    }
+
+    window.addEventListener('scroll', backgroundColor)
+
 
     return (
         <>
-            <Navbar key={true} bg="light" expand={'md'} fixed='top'>
+            <Navbar 
+                key={true} 
+                bg="light" 
+                expand={'xl'} 
+                fixed='top'
+                className={navbarColor ? "bg-light" : "bg-light-none"}
+            >
                 <Container fluid className='nav-container'>
                     
                     {/* Toggle off canvas content */}
@@ -105,7 +122,7 @@ function NavbarTop() {
 
                     {/* Nut dang nhap */}
                     <Navbar.Brand className='btn-login'>
-                        <Button variant="primary" >
+                        <Button variant="light" >
                             <Nav.Link href="Login">{language ? Language.VIE.Login : Language.ENG.Login}</Nav.Link>
                         </Button>
                     </Navbar.Brand>
