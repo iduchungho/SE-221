@@ -76,3 +76,12 @@
 .login-body-header{
     padding: 8px 6px 0px 6px;
 }
+
+.form-group{
+    padding-top: 5px;
+    padding-bottom: 3px;
+}
+
+.login-form-btn{
+    margin-top: 5px;
+}

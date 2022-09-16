@@ -1,7 +1,7 @@
 .home-page{
     /* margin-top: 80px; */
     background: url(https://papers.co/wallpaper/papers.co-ne57-green-city-cloud-metropolitan-urban-building-35-3840x2160-4k-wallpaper.jpg) center center/cover no-repeat;
-    height: 100vh;
+    height: 91vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -9,6 +9,8 @@
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
     object-fit: contain;
+    /* position: sticky;
+    top: 10rem; */
 }
 
 .title{
