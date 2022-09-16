@@ -6,8 +6,9 @@ mongoose.connect("mongodb+srv://giaphong:s6API7wIupJErUPu@uwc2.xz7wtxw.mongodb.n
 const User = require('../models/user.models');
 const seedDb = async () => {
     await User.deleteMany({});
-    const user = new User({username: 'admin', password: 'admin'});
-    await user.save();
+    const user = await new User({username: 'admin'});
+    const newUser = await User.register(user,'admin');
+    console.log(newUser);
 }
 
 seedDb();
