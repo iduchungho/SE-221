@@ -22,7 +22,7 @@ app.use(cors({
 // Connect to the Mongo DB
 const DB_URL = process.env.DB_URL;
 console.log(DB_URL)
-mongoose.connect(DB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect("mongodb+srv://giaphong:s6API7wIupJErUPu@uwc2.xz7wtxw.mongodb.net/?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log('Connected to DB!'))
     .catch(error => console.log(error.message));
 // Passport setup
