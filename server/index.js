@@ -21,6 +21,7 @@ app.use(cors({
 }))
 // Connect to the Mongo DB
 const DB_URL = process.env.DB_URL;
+console.log(DB_URL)
 mongoose.connect(DB_URL, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log('Connected to DB!'))
     .catch(error => console.log(error.message));
@@ -39,7 +40,7 @@ app.use(session({
         expires: Date.now() + 1000*60*60*24*7,
         maxAge:1000*60*60*24*7
     }
-  }))
+}))
 app.use(passport.initialize())
 app.use(passport.session())
 passport.use(new LocalStrategy(User.authenticate()))
