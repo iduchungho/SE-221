@@ -4,5 +4,5 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema({    
 })
-userSchema.plugin(passportLocalMongoose)
+userSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model('users', userSchema);
