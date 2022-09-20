@@ -5,11 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Navbar from './component/Navbar';
 // import Login from './pages/Login';
 // import Tutorial from './pages/tutorial';
-import NavbarTop from './component/Navbar/NavbarTop'
-import NavbarBottom from './component/Navbar/NavbarBottom';
-import Home from './pages/Home';
-import Login from './pages/Login/Login';
-import LoginSite from './pages/Login/LoginSite';
+import NavbarTop          from './component/Navbar/NavbarTop'
+import NavbarBottom       from './component/Navbar/NavbarBottom';
+import Home               from './pages/Home';
+import Login              from './component/Login/Login';
+import LoginSite          from './component/Login/LoginSite';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <NavbarTop />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/tutorial' element={<Home />} />
+          <Route path='/dashboard' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/login-site' element={<LoginSite />} />
         </Routes>

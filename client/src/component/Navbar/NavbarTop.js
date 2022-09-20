@@ -1,18 +1,17 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import React, { useState } from 'react';
+import './NavbarTop.css'// styles of the navbar element
+
+// BOOTSTRAP PLUGIN
+import Button       from 'react-bootstrap/Button';
+import Container    from 'react-bootstrap/Container';
+import Nav          from 'react-bootstrap/Nav';
+import Navbar       from 'react-bootstrap/Navbar';
+import NavDropdown  from 'react-bootstrap/NavDropdown';
+import Offcanvas    from 'react-bootstrap/Offcanvas';
 //import Form from 'react-bootstrap/Form';
-// import Modal from 'react-bootstrap/Modal';
+//import Modal from 'react-bootstrap/Modal';
 
-
-import './NavbarTop.css'
-import { Language } from '../config/configLanguage';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// ICON LIBRARY
+import {FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faTruckFast,
     // faMagnifyingGlass,
@@ -20,6 +19,12 @@ import {
     // faBell
 } from '@fortawesome/free-solid-svg-icons';
 
+// REACT LIBRARY
+import React,{ 
+    useState 
+}from 'react';
+
+import {Language} from '../config/configLanguage';
 function NavbarTop() {
     // const[show, setShow] = useState(false);
     // const handleShow = () => setShow(true);
@@ -89,7 +94,7 @@ function NavbarTop() {
                                 {/* item off canvas */}
                                 <Nav.Link href="/" className='nav-item'>{language ? Language.VIE.Home : Language.ENG.Home}</Nav.Link>
                                 <Nav.Link href="tutorial" className='nav-item'>{language ? Language.VIE.Tutorial : Language.ENG.Tutorial}</Nav.Link>
-                                <Nav.Link href="my-calendar" className='nav-item'>{language ? Language.VIE.Calendar : Language.ENG.Calendar}</Nav.Link>
+                                <Nav.Link href="dashboard" className='nav-item'>Dashboard</Nav.Link>
 
                                 {/* NavDropdown table content */}
                                 <NavDropdown

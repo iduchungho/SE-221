@@ -1,20 +1,24 @@
 import './Login.css'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {FontAwesomeIcon}        from '@fortawesome/react-fontawesome';
+import {useState}               from 'react'
+import {useNavigate}            from 'react-router-dom'
+import axios                    from 'axios';
+import React                    from 'react';
+import Button                   from 'react-bootstrap/esm/Button';
+import Form                     from 'react-bootstrap/Form';
 import {
     faTruckFast
-} from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
-import React from 'react';
-import {useNavigate} from 'react-router-dom'
-import Button from 'react-bootstrap/esm/Button';
-import Form from 'react-bootstrap/Form';
-import {useState} from 'react'
+}from '@fortawesome/free-solid-svg-icons';
+
 const backendUrl = 'http://localhost:3001';
+
 function LoginSite() {
+
     const navigate = useNavigate();
     const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
+
     const handleLogin = async () => {
         const user = await axios.post(`${backendUrl}/login`, ({username,password}),{withCredentials: true});
         console.log(user.data);
