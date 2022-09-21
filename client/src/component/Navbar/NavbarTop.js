@@ -18,22 +18,30 @@ import {
     // faComment,
     // faBell
 } from '@fortawesome/free-solid-svg-icons';
-
+import axios from 'axios';
 // REACT LIBRARY
 import React,{ 
     useState 
 }from 'react';
-
+import backendUrl from '../config/backendUrl';
 import {Language} from '../config/configLanguage';
+import { useNavigate } from 'react-router-dom';
+
 function NavbarTop() {
     // const[show, setShow] = useState(false);
     // const handleShow = () => setShow(true);
     // const handleClose = () => setShow(false);
-
+    const navigate = useNavigate()
     const [language, setLanguage] = useState(false);
     const VIE = 'Tiếng Việt (vi)';
     const US = 'English (en-US)';
-
+    const handleLogout = async () => {
+        const userId = localStorage.getItem('userId');
+        localStorage.removeItem('userId');
+        const data = await axios.post(`${backendUrl}/logout`,{id : userId},{withCredentials: true});
+        console.log(data);
+        navigate('/');
+    }
     const handleClick = () => {
         setLanguage(!language);
     }
@@ -126,11 +134,18 @@ function NavbarTop() {
                     </Navbar.Offcanvas>
 
                     {/* Nut dang nhap */}
-                    <Navbar.Brand className='btn-login'>
+                    {!localStorage.getItem('userId') && <Navbar.Brand className='btn-login'>
                         <Button variant="light" >
                             <Nav.Link href="Login">{language ? Language.VIE.Login : Language.ENG.Login}</Nav.Link>
                         </Button>
                     </Navbar.Brand>
+                    }
+                    {localStorage.getItem('userId') && <Navbar.Brand className='btn-login'>
+                        <Button variant="light" onClick={handleLogout}>
+                            <Nav.Link href="/">{language ? Language.VIE.Logout : Language.ENG.Logout}</Nav.Link>
+                        </Button>
+                    </Navbar.Brand>
+                    }
                 </Container>
             </Navbar>
         </>

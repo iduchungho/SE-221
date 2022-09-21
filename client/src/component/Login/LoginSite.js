@@ -11,8 +11,7 @@ import {
     faTruckFast
 }from '@fortawesome/free-solid-svg-icons';
 
-const backendUrl = 'http://localhost:3001';
-
+import backendUrl from '../config/backendUrl';
 function LoginSite() {
 
     const navigate = useNavigate();
@@ -20,10 +19,12 @@ function LoginSite() {
     const [password,setPassword] = useState("");
 
     const handleLogin = async () => {
-        const user = await axios.post(`${backendUrl}/login`, ({username,password}),{withCredentials: true});
-        console.log(user.data);
-        if(user.data.state === "success") {
-            navigate('/');
+        const {data} = await axios.post(`${backendUrl}/login`, ({username,password}),{withCredentials: true});
+        if(data.state === "success") {
+            const {user} = data;
+            localStorage.setItem('userId',user._id);
+            navigate('/user');
+            window.location.reload();
         }
     }
     const handleSubmit = (event) => {

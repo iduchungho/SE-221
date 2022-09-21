@@ -6,7 +6,7 @@ import React, {useState} from 'react';
 function Toasts() {
     const [show, setShow] = useState(true);
     const toggleShow = () => setShow(!show);
-
+    
     return (
         <ToastContainer position="top-center">
             <Toast show={show} onClose={toggleShow} autohide>
