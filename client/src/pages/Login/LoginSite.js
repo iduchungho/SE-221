@@ -1,5 +1,5 @@
 import './Login.css'
-
+import Cookies from 'universal-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faTruckFast
@@ -10,16 +10,19 @@ import {useNavigate} from 'react-router-dom'
 import Button from 'react-bootstrap/esm/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from 'react'
+
 const backendUrl = 'http://localhost:3001';
 function LoginSite() {
+    // const cookies = new Cookies();
     const navigate = useNavigate();
     const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
     const handleLogin = async () => {
-        const user = await axios.post(`${backendUrl}/login`, ({username,password}),{withCredentials: true});
-        console.log(user.data);
-        if(user.data.state === "success") {
+        const {data} = await axios.post(`${backendUrl}/login`, ({username,password}),{withCredentials: true});
+        if(data.state === "success") {
             navigate('/');
+            setUsername('');
+            setPassword('');
         }
     }
     const handleSubmit = (event) => {

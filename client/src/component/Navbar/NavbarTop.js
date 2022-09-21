@@ -4,7 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 //import Form from 'react-bootstrap/Form';
 // import Modal from 'react-bootstrap/Modal';
 
@@ -19,12 +20,23 @@ import {
     // faComment,
     // faBell
 } from '@fortawesome/free-solid-svg-icons';
-
+import getCurrentUser from '../../utils/getUser';
+import backendUrl from '../config/backendUrl';
+import { useNavigate } from 'react-router-dom';
 function NavbarTop() {
     // const[show, setShow] = useState(false);
     // const handleShow = () => setShow(true);
     // const handleClose = () => setShow(false);
-
+    const navigate = useNavigate()
+    const [user,setUser] = useState(null);
+    const getUser = async () => {
+        const user = await getCurrentUser();
+        setUser(user);
+    }
+    useEffect(() => {
+        // console.log(user);
+        getUser();
+    },[])
     const [language, setLanguage] = useState(false);
     const VIE = 'Tiếng Việt (vi)';
     const US = 'English (en-US)';
@@ -32,7 +44,16 @@ function NavbarTop() {
     const handleClick = () => {
         setLanguage(!language);
     }
-
+    const handleLogout = async () => {
+        const data = await axios.post(`${backendUrl}/logout`, user ,{withCredentials: true});
+        console.log(data.data);
+        if(data.data === "success") {
+            // const user = await getCurrentUser();
+            // console.log(user);
+            navigate('/');
+            console.log('logout success');
+        }
+    }
     const [navbarColor, setNavbarColor] = useState(false);
     const backgroundColor = () => {
         if(window.scrollY >= 10){
@@ -122,9 +143,14 @@ function NavbarTop() {
 
                     {/* Nut dang nhap */}
                     <Navbar.Brand className='btn-login'>
-                        <Button variant="light" >
+                        {!user && <Button variant="light" >
                             <Nav.Link href="Login">{language ? Language.VIE.Login : Language.ENG.Login}</Nav.Link>
-                        </Button>
+                        </Button>}
+                    </Navbar.Brand>
+                    <Navbar.Brand className='btn-login'>
+                        {user && <Button variant="light" onClick = {handleLogout}>
+                            <Nav.Link>{language ? Language.VIE.Logout : Language.ENG.Logout}</Nav.Link>
+                        </Button>}
                     </Navbar.Brand>
                 </Container>
             </Navbar>

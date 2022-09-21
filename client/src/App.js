@@ -10,22 +10,31 @@ import NavbarBottom from './component/Navbar/NavbarBottom';
 import Home from './pages/Home';
 import Login from './pages/Login/Login';
 import LoginSite from './pages/Login/LoginSite';
-
+// import getCurrentUser from './utils/getUser';
+// import { useEffect, useState } from 'react';
 function App() {
-  return (
-    <>
-      <Router>
-        <NavbarTop />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/tutorial' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/login-site' element={<LoginSite />} />
-        </Routes>
-        <NavbarBottom />
-      </Router>
-    </>
-  );
+    // const [user,setUser] = useState(null);
+    // const getUser = async () => {
+    //     const currentUser = await getCurrentUser();
+    //     setUser(currentUser); 
+    // }
+    // useEffect(() => {
+    //     getUser();
+    // },[user])
+    return (
+        <>
+            <Router>
+                <NavbarTop/>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/tutorial' element={<Home />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/login-site' element={<LoginSite />} />
+                </Routes>
+                <NavbarBottom />
+            </Router>
+        </>
+    );
 }
 
 export default App;
